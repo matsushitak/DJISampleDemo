@@ -1,0 +1,16 @@
+PODS:
+  - DJIWidget (1.2)
+
+DEPENDENCIES:
+  - DJIWidget (~> 1.2)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - DJIWidget
+
+SPEC CHECKSUMS:
+  DJIWidget: 4559d2f4ccaa499a7bd2cdc98658f35d78d20357
+
+PODFILE CHECKSUM: e0f74c8b2e39bd294427af188d9f102d5ee085c8
+
+COCOAPODS: 1.5.3

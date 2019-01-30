@@ -1,0 +1,6 @@
+framework module Pods_DJISampleDemo {
+  umbrella header "Pods-DJISampleDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
