@@ -163,11 +163,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DJISampleDemo/Pods-DJISampleDemo-frameworks.sh",
+				"${PODS_ROOT}/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework",
+				"${PODS_ROOT}/DJI-UXSDK-iOS/iOS_UXSDK/DJIUXSDK.framework",
 				"${PODS_ROOT}/DJIWidget/FFmpeg/FFmpeg.framework",
 				"${BUILT_PRODUCTS_DIR}/DJIWidget/DJIWidget.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIUXSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FFmpeg.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJIWidget.framework",
 			);
