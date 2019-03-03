@@ -20,7 +20,7 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         DJISDKManager.registerApp(with: self)
@@ -28,7 +28,7 @@ class CameraViewController: UIViewController {
 }
 
 extension CameraViewController: DJISDKManagerDelegate {
-    
+
     func appRegisteredWithError(_ error: Error?) {
         if let error = error {
             print("Register App Failured : " + error.localizedDescription)
@@ -36,5 +36,16 @@ extension CameraViewController: DJISDKManagerDelegate {
             print("Register App Successed")
             DJISDKManager.startConnectionToProduct()
         }
+    }
+}
+
+extension CameraViewController: DJICameraDelegate {
+
+}
+
+extension CameraViewController: DJIVideoFeedListener {
+
+    func videoFeed(_ videoFeed: DJIVideoFeed, didUpdateVideoData videoData: Data) {
+
     }
 }
