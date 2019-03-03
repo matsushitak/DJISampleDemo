@@ -1,3 +1,5 @@
+![Swift Version Badge](https://img.shields.io/badge/Swift-4.2-orange.svg)
+
 # DJISampleDemo
 
 - This is tutorial of DJI aircraft SDK.
