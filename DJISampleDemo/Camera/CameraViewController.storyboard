@@ -24,10 +24,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hav-3F-beK">
                                         <rect key="frame" x="0.0" y="10" width="114.5" height="30"/>
                                         <state key="normal" title="Take Capture"/>
+                                        <connections>
+                                            <action selector="onTapTakingCapture:" destination="gmX-wf-BDK" eventType="touchUpInside" id="pWl-vP-WeQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9l-ID-1k9">
                                         <rect key="frame" x="130.5" y="10" width="114" height="30"/>
                                         <state key="normal" title="Record Video"/>
+                                        <connections>
+                                            <action selector="onTapRecordingVideo:" destination="gmX-wf-BDK" eventType="touchUpInside" id="ldB-hh-1jF"/>
+                                        </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WSb-5y-Gm7">
                                         <rect key="frame" x="260.5" y="11" width="114.5" height="29"/>
@@ -35,6 +41,9 @@
                                             <segment title="Capture"/>
                                             <segment title="Video"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="onChangedModeSegmentedControl:" destination="gmX-wf-BDK" eventType="valueChanged" id="Hp5-kF-vuq"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <constraints>

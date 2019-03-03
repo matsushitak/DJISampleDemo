@@ -30,6 +30,18 @@ class CameraViewController: UIViewController {
         super.viewWillDisappear(animated)
         disconnectCamera()
     }
+
+    @IBAction func onTapTakingCapture(_ sender: UIButton) {
+
+    }
+
+    @IBAction func onTapRecordingVideo(_ sender: UIButton) {
+
+    }
+
+    @IBAction func onChangedModeSegmentedControl(_ sender: UISegmentedControl) {
+
+    }
 }
 
 extension CameraViewController: DJISDKManagerDelegate {
