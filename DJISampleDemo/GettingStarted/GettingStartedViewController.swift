@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import DJIUXSDK
 
-class GettingStartedViewController: UIViewController {
+class GettingStartedViewController: DUXDefaultLayoutViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
