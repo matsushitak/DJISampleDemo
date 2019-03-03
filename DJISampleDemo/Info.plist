@@ -20,6 +20,11 @@
 	<string>1</string>
 	<key>DJISDKAppKey</key>
 	<string>d0254113dcbcb67faf126935</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
