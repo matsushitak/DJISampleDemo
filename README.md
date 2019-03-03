@@ -1,5 +1,7 @@
 # DJISampleDemo
 
+- This is tutorial of DJI aircraft SDK.
+
 ## Official
 
 - [Developer Console](https://developer.dji.com/)
