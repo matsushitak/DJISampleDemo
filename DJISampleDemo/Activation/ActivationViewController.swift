@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ActivationViewController.swift
 //  DJISampleDemo
 //
 //  Created by 松下航平 on 2019/01/30.
@@ -8,7 +8,8 @@
 import UIKit
 import DJISDK
 
-class ViewController: UIViewController {
+/// Application Activation and Aircraft Binding
+class ActivationViewController: UIViewController {
 
     @IBOutlet weak var activationStateLabel: UILabel!
     @IBOutlet weak var aircraftBindingStateLabel: UILabel!
@@ -89,7 +90,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: DJIAppActivationManagerDelegate {
+extension ActivationViewController: DJIAppActivationManagerDelegate {
 
     func manager(_ manager: DJIAppActivationManager!, didUpdate appActivationState: DJIAppActivationState) {
         self.activationState = appActivationState
@@ -103,7 +104,7 @@ extension ViewController: DJIAppActivationManagerDelegate {
 }
 
 
-extension ViewController: DJISDKManagerDelegate {
+extension ActivationViewController: DJISDKManagerDelegate {
 
     func appRegisteredWithError(_ error: Error?) {
         if let error = error {
