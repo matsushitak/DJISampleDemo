@@ -12,13 +12,20 @@ import DJIWidget
 /// Camera Application
 class CameraViewController: UIViewController {
 
+    private enum CameraMode {
+        case photo, video
+    }
+
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var takingButton: UIButton!
     @IBOutlet weak var recordingButton: UIButton!
+    @IBOutlet weak var recordingTimeLabel: UILabel!
     @IBOutlet weak var changeModeSegmentedControl: UISegmentedControl!
+    private var isRecording: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        recordingTimeLabel.isHidden = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,15 +39,47 @@ class CameraViewController: UIViewController {
     }
 
     @IBAction func onTapTakingCapture(_ sender: UIButton) {
-
+        guard let camera = camera else {
+            print("Product's camera is not found")
+            return
+        }
+        camera.setShootPhotoMode(.single) { (error) in
+            if let error = error {
+                print("Capture Failured : " + error.localizedDescription)
+            } else {
+                camera.startShootPhoto { (error) in
+                    if let error = error {
+                        print("Capture Failured : " + error.localizedDescription)
+                    }
+                }
+            }
+        }
     }
 
     @IBAction func onTapRecordingVideo(_ sender: UIButton) {
-
+        guard let camera = camera else {
+            print("Product's camera is not found")
+            return
+        }
+        camera.setShootPhotoMode(.single) { (error) in
+            if let error = error {
+                print("Record Failured : " + error.localizedDescription)
+            } else {
+                camera.startRecordVideo { (error) in
+                    if let error = error {
+                        print("Record Failured : " + error.localizedDescription)
+                    }
+                }
+            }
+        }
     }
 
     @IBAction func onChangedModeSegmentedControl(_ sender: UISegmentedControl) {
-
+        if sender.selectedSegmentIndex == 0 {
+            changeCameraMode(mode: .photo)
+        } else if sender.selectedSegmentIndex == 1 {
+            changeCameraMode(mode: .video)
+        }
     }
 }
 
@@ -101,7 +140,45 @@ extension CameraViewController: DJISDKManagerDelegate {
 extension CameraViewController: DJICameraDelegate {
 
     func camera(_ camera: DJICamera, didUpdate systemState: DJICameraSystemState) {
+        isRecording = systemState.isRecording
+        recordingTimeLabel.isHidden = !systemState.isRecording
+        recordingTimeLabel.text = formattingSecond(seconds: systemState.currentVideoRecordingTimeInSeconds)
+        if systemState.isRecording {
+            recordingButton.setTitle("Stop Record", for: .normal)
+        } else {
+            recordingButton.setTitle("Start Record", for: .normal)
+        }
+    }
 
+    private func formattingSecond(seconds: UInt) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(seconds))
+        let formatter = DateFormatter()
+        formatter.dateFormat = "mm:ss"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter.string(from: date)
+    }
+
+    private func changeCameraMode(mode: CameraMode) {
+        guard let camera = camera else {
+            print("Product's camera is not found")
+            return
+        }
+        let changeMode: DJICameraMode!
+        switch mode {
+        case .photo:
+            changeMode = .shootPhoto
+            break
+        case .video:
+            changeMode = .recordVideo
+            break
+        }
+        camera.setMode(changeMode) { error in
+            if let error = error {
+                print("Change Camera Mode Failured : " + error.localizedDescription)
+            } else {
+                print("Change Camera Mode Successed")
+            }
+        }
     }
 }
 
