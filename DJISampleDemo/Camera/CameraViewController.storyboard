@@ -17,9 +17,53 @@
                     <view key="view" contentMode="scaleToFill" id="kb5-ZJ-IUx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NsM-Xl-aj5">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hav-3F-beK">
+                                        <rect key="frame" x="0.0" y="10" width="114.5" height="30"/>
+                                        <state key="normal" title="Take Capture"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9l-ID-1k9">
+                                        <rect key="frame" x="130.5" y="10" width="114" height="30"/>
+                                        <state key="normal" title="Record Video"/>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WSb-5y-Gm7">
+                                        <rect key="frame" x="260.5" y="11" width="114.5" height="29"/>
+                                        <segments>
+                                            <segment title="Capture"/>
+                                            <segment title="Video"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="glk-EJ-XQL"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CgX-FE-J7V">
+                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qfz-BJ-rHr" firstAttribute="trailing" secondItem="CgX-FE-J7V" secondAttribute="trailing" id="1pb-YO-0Az"/>
+                            <constraint firstItem="NsM-Xl-aj5" firstAttribute="trailing" secondItem="qfz-BJ-rHr" secondAttribute="trailing" id="BZx-On-xD5"/>
+                            <constraint firstItem="NsM-Xl-aj5" firstAttribute="leading" secondItem="qfz-BJ-rHr" secondAttribute="leading" id="EBJ-q0-nm8"/>
+                            <constraint firstItem="CgX-FE-J7V" firstAttribute="top" secondItem="qfz-BJ-rHr" secondAttribute="top" id="KQ7-43-CzF"/>
+                            <constraint firstItem="NsM-Xl-aj5" firstAttribute="top" secondItem="CgX-FE-J7V" secondAttribute="bottom" id="NMR-Im-BFn"/>
+                            <constraint firstItem="qfz-BJ-rHr" firstAttribute="bottom" secondItem="NsM-Xl-aj5" secondAttribute="bottom" id="TDl-xl-kDV"/>
+                            <constraint firstItem="CgX-FE-J7V" firstAttribute="leading" secondItem="qfz-BJ-rHr" secondAttribute="leading" id="x9M-yb-Ehd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qfz-BJ-rHr"/>
                     </view>
+                    <connections>
+                        <outlet property="changeModeSegmentedControl" destination="WSb-5y-Gm7" id="ArU-r2-8gB"/>
+                        <outlet property="previewView" destination="CgX-FE-J7V" id="f3u-2p-Bro"/>
+                        <outlet property="recordingButton" destination="h9l-ID-1k9" id="5fW-6p-N7p"/>
+                        <outlet property="takingButton" destination="hav-3F-beK" id="D1b-GQ-HjH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DO1-av-0Bw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -6,24 +6,18 @@
 //
 
 import UIKit
+import DJISDK
+import DJIWidget
 
+/// Camera Application
 class CameraViewController: UIViewController {
+
+    @IBOutlet weak var previewView: UIView!
+    @IBOutlet weak var takingButton: UIButton!
+    @IBOutlet weak var recordingButton: UIButton!
+    @IBOutlet weak var changeModeSegmentedControl: UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
