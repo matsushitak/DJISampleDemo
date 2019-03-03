@@ -10,6 +10,8 @@
 		A757E1688D02B8CE85221385 /* Pods_DJISampleDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9EEC3C256266A7E77BB803 /* Pods_DJISampleDemo.framework */; };
 		BE029210222BE0C500E50829 /* GettingStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02920F222BE0C500E50829 /* GettingStartedViewController.swift */; };
 		BE029212222BE0D600E50829 /* GettingStartedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE029211222BE0D600E50829 /* GettingStartedViewController.storyboard */; };
+		BE029215222BF8E600E50829 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE029214222BF8E600E50829 /* CameraViewController.swift */; };
+		BE029217222BF8F000E50829 /* CameraViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE029216222BF8F000E50829 /* CameraViewController.storyboard */; };
 		BE8857602201D9AC00414FDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE88575F2201D9AC00414FDC /* AppDelegate.swift */; };
 		BE8857622201D9AC00414FDC /* ActivationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8857612201D9AC00414FDC /* ActivationViewController.swift */; };
 		BE8857652201D9AC00414FDC /* ActivationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8857632201D9AC00414FDC /* ActivationViewController.storyboard */; };
@@ -21,6 +23,8 @@
 		6740E3E806211444FE181799 /* Pods-DJISampleDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJISampleDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJISampleDemo/Pods-DJISampleDemo.release.xcconfig"; sourceTree = "<group>"; };
 		BE02920F222BE0C500E50829 /* GettingStartedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingStartedViewController.swift; sourceTree = "<group>"; };
 		BE029211222BE0D600E50829 /* GettingStartedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GettingStartedViewController.storyboard; sourceTree = "<group>"; };
+		BE029214222BF8E600E50829 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		BE029216222BF8F000E50829 /* CameraViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CameraViewController.storyboard; sourceTree = "<group>"; };
 		BE88575C2201D9AC00414FDC /* DJISampleDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJISampleDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE88575F2201D9AC00414FDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE8857612201D9AC00414FDC /* ActivationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,15 @@
 			path = GettingStarted;
 			sourceTree = "<group>";
 		};
+		BE029213222BF89A00E50829 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				BE029216222BF8F000E50829 /* CameraViewController.storyboard */,
+				BE029214222BF8E600E50829 /* CameraViewController.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		BE8857532201D9AC00414FDC = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +117,7 @@
 				BE88575F2201D9AC00414FDC /* AppDelegate.swift */,
 				BE8857662201D9AE00414FDC /* Assets.xcassets */,
 				BE02920D222BDF2900E50829 /* Activation */,
+				BE029213222BF89A00E50829 /* Camera */,
 				BE02920E222BE08F00E50829 /* GettingStarted */,
 				BE8857682201D9AE00414FDC /* LaunchScreen.storyboard */,
 			);
@@ -171,6 +185,7 @@
 			files = (
 				BE88576A2201D9AE00414FDC /* LaunchScreen.storyboard in Resources */,
 				BE8857672201D9AE00414FDC /* Assets.xcassets in Resources */,
+				BE029217222BF8F000E50829 /* CameraViewController.storyboard in Resources */,
 				BE029212222BE0D600E50829 /* GettingStartedViewController.storyboard in Resources */,
 				BE8857652201D9AC00414FDC /* ActivationViewController.storyboard in Resources */,
 			);
@@ -229,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE029210222BE0C500E50829 /* GettingStartedViewController.swift in Sources */,
+				BE029215222BF8E600E50829 /* CameraViewController.swift in Sources */,
 				BE8857622201D9AC00414FDC /* ActivationViewController.swift in Sources */,
 				BE8857602201D9AC00414FDC /* AppDelegate.swift in Sources */,
 			);
