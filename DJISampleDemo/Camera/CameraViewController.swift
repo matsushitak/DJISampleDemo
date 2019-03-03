@@ -20,4 +20,21 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        DJISDKManager.registerApp(with: self)
+    }
+}
+
+extension CameraViewController: DJISDKManagerDelegate {
+    
+    func appRegisteredWithError(_ error: Error?) {
+        if let error = error {
+            print("Register App Failured : " + error.localizedDescription)
+        } else {
+            print("Register App Successed")
+            DJISDKManager.startConnectionToProduct()
+        }
+    }
 }
